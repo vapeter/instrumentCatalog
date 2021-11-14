@@ -1,0 +1,81 @@
+<h1 mat-dialog-title>{{'rent.detailsOfRent' | translate}}</h1>
+<form [formGroup]="instrumentRentalService.instrumentRentalForm" (ngSubmit)="saveRental()">
+
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <mat-form-field *ngIf=false>
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="rentalId" name="rentalId">
+                </mat-form-field>
+                <mat-form-field *ngIf=false>
+                    <input matInput formControlName="instrument" name="instrument">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>{{'rent.instrument' | translate}}</mat-label>
+                    <input matInput formControlName="instrumentName" name="instrumentName" readonly>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field color="primary" appearance="fill">
+                    <mat-label>{{'rent.startOfRental' | translate}}</mat-label>
+                    <input matInput [max]="maxDate" formControlName="startOfRental" name="startOfRental"
+                           [matDatepicker]="picker2">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-label>{{'rent.personOfRental' | translate}}</mat-label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-radio-group [(ngModel)]="personOfRental" [ngModelOptions]="{standalone: true}">
+                    <mat-radio-button value="teacher" color="primary">
+                        {{'rent.teacher' | translate}}
+                    </mat-radio-button>
+                    <mat-radio-button value="student" color="primary">
+                        {{'rent.student' | translate}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </td>
+        </tr>
+        <tr *ngIf="personOfRental === 'teacher'">
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'rent.teacher' | translate}}</mat-label>
+                    <mtx-select matInput formControlName="teacher" name="teacher">
+                        <mtx-option *ngFor="let item of teachers" [value]="item">
+                            {{'rent.name' | translate}}
+                            {{item.name}}
+                        </mtx-option>
+                    </mtx-select>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr *ngIf="personOfRental === 'student'">
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'rent.student' | translate}}</mat-label>
+                    <mtx-select matInput formControlName="student" name="student">
+                        <mtx-option *ngFor="let item of students" [value]="item">
+                            {{'rent.name' | translate}}
+                            {{item.name}}
+                            {{'rent.studentMothersName' | translate}}
+                            {{item.mothersName}}
+                        </mtx-option>
+                    </mtx-select>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <button mat-button (click)="onNoClick()" type="reset">{{'buttons.cancel' | translate}}</button>
+    <button mat-button type="submit"
+            [disabled]="instrumentRentalService.instrumentRentalForm.invalid">{{'buttons.submit' | translate}}</button>
+</form>

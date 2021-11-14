@@ -1,0 +1,96 @@
+<h1 mat-dialog-title>{{'instrument.dataOfInstrument' | translate}}</h1>
+<form [formGroup]="instrumentsService.instrumentForm" (ngSubmit)="saveInstrument()">
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <mat-form-field *ngIf=false>
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="instrumentId" name="instrumentId">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>{{'instruments.tableCatalogNumber' | translate}}</mat-label>
+                    <input matInput formControlName="catalogNumber" name="catalogNumber">
+                    <mat-error>{{'instrument.formErrorCatalogNumber' | translate}}</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableBrand' | translate}}</mat-label>
+                    <input matInput formControlName="brand" name="brand"
+                           placeholder="{{'instrument.formPlaceholderBrand' | translate}}">
+                    <mat-error>{{'instrument.formErrorBrand' | translate}}</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableModel' | translate}}</mat-label>
+                    <input matInput formControlName="model" name="model"
+                           placeholder="{{'instrument.formPlaceholderBrand' | translate}}">
+                    <mat-error>{{'instrument.formErrorModel' | translate}}</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableType' | translate}}</mat-label>
+                    <input matInput formControlName="instrumentType" name="instrumentType"
+                           placeholder="{{'instrument.formPlaceholderType' | translate}}">
+                    <mat-error>{{'instrument.formErrorType' | translate}}</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableSerialNumber' | translate}}</mat-label>
+                    <input matInput formControlName="serialNumber" name="serialNumber">
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableLocation' | translate}}</mat-label>
+                    <input matInput formControlName="location" name="location">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableComment' | translate}}</mat-label>
+                    <input matInput formControlName="comment" name="comment">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableHighValue' | translate}}</mat-label>
+                    <mat-select required formControlName="highValue" name="highValue">
+                        <mat-option value="true">{{'yesNo.yes' | translate}}</mat-option>
+                        <mat-option value="false">{{'yesNo.no' | translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-label>{{'instruments.tableWaste' | translate}}</mat-label>
+                    <mat-select required formControlName="waste" name="waste">
+                        <mat-option value="true">{{'yesNo.yes' | translate}}</mat-option>
+                        <mat-option value="false">{{'yesNo.no' | translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field *ngIf=false>
+                    <mat-label>{{'instruments.tableRented' | translate}}</mat-label>
+                    <mat-select formControlName="rented" name="rented">
+                        <mat-option value="true">{{'yesNo.yes' | translate}}</mat-option>
+                        <mat-option value="false">{{'yesNo.no' | translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <button mat-button (click)="onNoClick()" type="reset">{{'buttons.cancel' | translate}}</button>
+    <button mat-button type="submit"
+            [disabled]="instrumentsService.instrumentForm.invalid">{{'buttons.submit' | translate}}</button>
+</form>

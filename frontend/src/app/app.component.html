@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span class="logo">
+            <button matTooltip="Home" mat-icon-button color="primary" routerLink="/">
+                <mat-icon *ngIf="logoSrc()" svgIcon="logo_en" id="logo" [inline]="true"></mat-icon>
+                <mat-icon *ngIf="!logoSrc()" svgIcon="logo_hu" id="logo" [inline]="true"></mat-icon>
+            </button>
+        </span>
+        <span class="menu">
+          <button mat-menu-item *ngIf="isLoggedIn" [matMenuTriggerFor]="catalog">{{'menu.home' | translate}}
+              <mat-icon>
+              arrow_drop_down
+            </mat-icon>
+          </button>
+        </span>
+        <mat-menu #catalog="matMenu">
+            <button mat-menu-item routerLink="/instruments">{{'menu.instrumentsManagement' | translate}}</button>
+        </mat-menu>
+        <span class="menu">
+          <button mat-menu-item *ngIf="isLoggedIn"
+                  [matMenuTriggerFor]="administration">{{'menu.administration' | translate}}
+              <mat-icon>
+                arrow_drop_down
+              </mat-icon>
+          </button>
+        </span>
+        <mat-menu #administration="matMenu">
+            <button mat-menu-item routerLink="/students">{{'menu.studentManagement' | translate}}</button>
+            <button mat-menu-item routerLink="/teachers">{{'menu.teachersManagement' | translate}}</button>
+            <button mat-menu-item routerLink="/fileUpload">{{'menu.imports' | translate}}</button>
+        </mat-menu>
+        <span class="menu" id="language">
+            <button mat-menu-item [matMenuTriggerFor]="language">{{'menu.languageSelect' | translate}}
+                <mat-icon>
+                    arrow_drop_down
+                </mat-icon>
+            </button>
+        </span>
+            <mat-menu #language="matMenu">
+                <button mat-menu-item (click)="useLang('hu')">{{'menu.hun' | translate}}</button>
+                <button mat-menu-item (click)="useLang('en')">{{'menu.eng' | translate}}</button>
+            </mat-menu>
+        <span id="logout">
+          <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">{{'menu.logout' | translate}}</button>
+          <button mat-menu-item *ngIf="!isLoggedIn" (click)="userLogin()">{{'menu.login' | translate}}</button>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,61 @@
+version: "3.8"
+services:
+  instrument-catalog-db:
+    image: mysql:8.0.23
+    container_name: instrumentCatalog-db
+    networks:
+      - instrumentcatalog-net
+    volumes:             
+      - ./databases:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: MysqlRootPass
+    ports:
+      - "12547:3306"
+    restart: always
+
+  instrument-catalog-keycloak:
+    image: jboss/keycloak:11.0.2
+    container_name: instrumentCatalog-keycloak
+    networks:
+      - instrumentcatalog-net
+    environment:
+      DB_VENDOR: mysql
+      DB_ADDR: instrument-catalog-db
+      DB_USER: keycloak
+      DB_PASSWORD: KeycloakAdmin
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: KeycloakAdmin
+      KEYCLOAK_IMPORT: /tmp/instrumentCatalog-realm.json
+    volumes:
+      - ./keycloak/instrumentCatalog-realm.json:/tmp/instrumentCatalog-realm.json
+    ports:
+      - "9080:8080"
+    restart: always
+    depends_on:
+      - instrument-catalog-db
+
+  instrument-catalog-backend:
+    build: ./backend
+    container_name: instrumentCatalog-backend
+    ports:
+      - "9100:9100"
+    networks:
+      - instrumentcatalog-net
+    restart: always
+    depends_on:
+      - instrument-catalog-db
+
+  instrument-catalog-frontend:
+    build: ./frontend
+    container_name: instrumentCatalog-frontend
+    ports:
+      - 9200:80
+    networks:
+      - instrumentcatalog-net
+    restart: always
+    depends_on:
+      - instrument-catalog-keycloak
+
+networks:
+  instrumentcatalog-net:
+    external: true 

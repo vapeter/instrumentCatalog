@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div>
+
+    <mat-form-field>
+      <mat-label>{{'fileUpload.samples' | translate}}</mat-label>
+      <mat-select #selectedFile>
+        <mat-option value="teacher_import_sample.xlsx">{{'fileUpload.teachersSample' | translate}}</mat-option>
+        <mat-option value="student_import_sample.xlsx">{{'fileUpload.studentSample' | translate}}</mat-option>
+        <mat-option value="instrument_import_sample.xlsx">{{'fileUpload.instrumentSample' | translate}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-button type="submit"
+            [disabled]='!selectedFile.value'
+            (click)="downloadFile(selectedFile.value)">
+      {{'fileUpload.downloadButton' | translate}}
+    </button>
+  </div>
+  <table>
+    <tr>
+      <td>
+        <label>{{'fileUpload.fileUploadForImport' | translate}}</label>
+        <input
+          style="display: none"
+          accept=".xlsx"
+          type="file" (change)="onFileChanged($event)"
+          #fileInput>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="fileInput.click()" mat-stroked-button color="basic">
+          <mat-icon>attachment</mat-icon>
+          {{'fileUpload.chooseFile' | translate}}
+        </button>
+        {{'fileUpload.choosedFile' | translate}} {{uploadedFileName}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="onUpload()" mat-stroked-button color="warn" [disabled]='uploadedFileName.length === 0'>
+          <mat-icon>file_upload</mat-icon>
+          {{'fileUpload.fileUploadButton' | translate}}
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+<hr>
+<div *ngIf='uploaded'>
+  <div>
+    {{'fileUpload.uploadedFileImportText1' | translate}} ({{uploadedFileName}}) {{'fileUpload.uploadedFileImportText2' | translate}}
+  </div>
+  <div>
+    <form [formGroup]="importService.importForm" (ngSubmit)="onImport()">
+      <div class="container-fluid">
+        <mat-form-field>
+          <mat-label>{{'fileUpload.importType' | translate}}</mat-label>
+            <mat-select formControlName="importType" name="importType">
+              <mat-option value="student">{{'fileUpload.studentImport' | translate}}</mat-option>
+              <mat-option value="teacher">{{'fileUpload.teacherImport' | translate}}</mat-option>
+              <mat-option value="instrument">{{'fileUpload.instrumentImport' | translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <button type="submit" mat-stroked-button color="warn">
+          {{'fileUpload.importButton' | translate}}
+          <mat-icon>done</mat-icon>
+        </button>
+      </div>
+    </form>
+    <div>
+      <mat-spinner style="margin:0 auto;" *ngIf="workingOnIt"></mat-spinner>
+    </div>
+  </div>
+</div>
+
+
+

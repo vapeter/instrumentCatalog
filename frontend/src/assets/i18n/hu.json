@@ -1,0 +1,123 @@
+{
+  "home": {
+    "subheader": "Üdvözlöm!",
+    "pleaseLogin": "Az alkalmazás használatához kérem jelentkezzen be",
+    "title": "Hangszertár",
+    "description": "Ez egy demo alkalmazás, mely hobby célból készült spring-boot, angular, mysql, keycloak és docker használatával.",
+    "details": "Ez egy katalógus alkalmazás hangszereknek. A pedagógus és növendék adatokat a hivatalos oktatási rendszerből lehet importálni, melyhez elérhető minta excel file. Hangszert hozzáadni lehet manuálisan és importálva is.",
+    "details2": "Az admin felhasználó tud bérbe adni hangszert és visszavenni, szerkeszteni, selejtnek jelölni, törölni és az évenkénti bemutatást rögzíteni (utóbbi a kölcsönzött hangszerek ellenőrzéséhez szükséges).",
+    "source": "A forráskód az alábbi linken elérhető: ",
+    "username": "felhasználónév",
+    "password": "jelszó"
+  },
+  "buttons": {
+    "cancel": "Mégse",
+    "submit": "Mentés"
+  },
+  "yesNo": {
+    "yes": "Igen",
+    "no": "Nem"
+  },
+  "nodata": {
+    "noData": "Nincs adat az adatbázisban, kérlek használd az adatok importálása menüpontot!"
+  },
+  "fileUpload": {
+    "samples": "Elérhető minta fájlok: ",
+    "teachersSample": "Pedagógus import minta",
+    "studentSample": "Növendék import minta",
+    "instrumentSample": "Hangszer import minta",
+    "downloadButton": "Letöltés",
+    "fileUploadForImport": "Fájl feltöltése importáláshoz (Maximális méret 10MB, csak .xlsx formátum): ",
+    "chooseFile": "Fájl kiválasztása: ",
+    "choosedFile": "A kiválasztott fájl: ",
+    "fileUploadButton": "Feltöltés",
+    "uploadedFileImportText1": "A feltöltött fájl",
+    "uploadedFileImportText2": "adatbázisba történő importáláshoz válasszon az alábbi lehetőségek közül:",
+    "importType": "Importálás típusa",
+    "studentImport": "Növendékek importálása",
+    "teacherImport": "Pedagógusok importálása",
+    "instrumentImport": "Hangszerek importálása",
+    "importButton": "Importálás",
+    "successfulUpload": "Sikeres feltöltés!"
+  },
+  "instruments": {
+    "addInstrument": "Hangszer hozzáadása",
+    "search": "Keresés",
+    "searchPlaceholder": "pl. Yamaha",
+    "tableCatalogNumber": "Leltári szám",
+    "tableBrand": "Márka",
+    "tableModel": "Model",
+    "tableType": "Típus",
+    "tableSerialNumber": "Gyártási szám",
+    "tableLocation": "Hely",
+    "tableComment": "Megjegyzés",
+    "tableLastShowingDate": "Utolsó bemutatás dátuma",
+    "tableRented": "Kiadott",
+    "tableWaste": "Selejt",
+    "tableHighValue": "Nagyértékű",
+    "tableActions": "Módosítások",
+    "rentTip": "Kiadás",
+    "backToStorageTip": "Visszahozás",
+    "editTip": "Szerkesztés",
+    "showTip": "Bemutatva",
+    "deleteTip": "Törlés",
+    "historyTip": "Előzmények",
+    "deleteConfirm": "Biztos vagy benne?"
+  },
+  "instrument": {
+    "dataOfInstrument": "Hangszer adatai",
+    "formErrorCatalogNumber": "Leltári szám megadása kötelező",
+    "formErrorBrand": "Márka megadása kötelező",
+    "formErrorModel": "Model megadása kötelező",
+    "formErrorType": "Típus megadása kötelező",
+    "formPlaceholderBrand": "pl. Buffet",
+    "formPlaceholderModel": "pl. E11",
+    "formPlaceholderType": "pl. Klarinét"
+  },
+  "rent": {
+    "detailsOfRent": "Kölcsönzés adatai",
+    "instrument": "Hangszer",
+    "startOfRental": "Kölcsönzés kezdete",
+    "personOfRental": "Kölcsönző személye:",
+    "student": "Növendék",
+    "teacher": "Pedagógus",
+    "name": "Név: ",
+    "studentMothersName": ", anyja neve: "
+  },
+  "students": {
+    "search": "Keresés",
+    "searchPlaceholder": "pl. Géza",
+    "educationalID": "Oktatási azonosító",
+    "name": "Viselt név",
+    "birthName": "Születési név",
+    "mothersName": "Anyja neve",
+    "birthPlace": "Születési hely",
+    "birthDate": "Születési idő",
+    "gender": "Neme",
+    "actions": "Módosítások",
+    "quit": "Kiiratkozás"
+  },
+  "teachers": {
+    "search": "Keresés",
+    "searchPlaceHolder": "pl. Géza",
+    "educationalID": "Oktatási azonosító",
+    "name": "Név",
+    "actions": "Módosítások",
+    "quit": "Kiléptetés",
+    "quitConfirm": "Biztos vagy benne?"
+  },
+  "menu": {
+    "home": "Hangszertár",
+    "instrumentsManagement": "Hangszerek kezelése",
+    "administration": "Adminisztráció",
+    "studentManagement": "Növendékek kezelése",
+    "teachersManagement": "Pedagógusok kezelése",
+    "availableInstruments": "Elérhető hangszerek",
+    "imports": "Adatok importálása",
+    "languageSelect": "Nyelv",
+    "hun": "Magyar",
+    "eng": "Angol",
+    "logout": "Kijelentkezés",
+    "login": "Bejelentkezés"
+  }
+}

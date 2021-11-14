@@ -1,0 +1,123 @@
+{
+  "home": {
+    "subheader": "Welcome",
+    "pleaseLogin": "Please log in to use the application",
+    "title": "Instrument Catalog",
+    "description": "This is a demo application made for hobby purposes using spring-boot, angular, mysql, keycloak and docker.",
+    "details": "This is a catalog application for musical instruments. Teacher and student data can be imported from the official education system, for which an excel sample is available. An instrument can be added manually or imported too.",
+    "details2": "The admin user can rent an instrument and take it back, edit it, mark it as waste, delete it and record the annual presentation (the latter is necessary for the inspection of rented instruments).",
+    "source": "The source code is available at the following link: ",
+    "username": "username",
+    "password": "password"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  },
+  "yesNo": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nodata": {
+    "noData": "There is no data in the database, please use the menu item Data imports!"
+  },
+  "fileUpload": {
+    "samples": "Available samples: ",
+    "teachersSample": "Sample of teacher import",
+    "studentSample": "Sample of student import",
+    "instrumentSample": "Sample of instrument import",
+    "downloadButton": "Download",
+    "fileUploadForImport": "Upload a file to import (Maximum size 10MB, only .xlsx format): ",
+    "chooseFile": "Select a file: ",
+    "choosedFile": "The selected file: ",
+    "fileUploadButton": "Upload",
+    "uploadedFileImportText1": "The uploaded file",
+    "uploadedFileImportText2": "to import to the database, choose from the options below:",
+    "importType": "Type of import",
+    "studentImport": "Students import",
+    "teacherImport": "Teachers import",
+    "instrumentImport": "Instruments import",
+    "importButton": "Import",
+    "successfulUpload": "Successful upload!"
+  },
+  "instruments": {
+    "addInstrument": "Add instrument",
+    "search": "Search",
+    "searchPlaceholder": "e.g. Yamaha",
+    "tableCatalogNumber": "Catalog number",
+    "tableBrand": "Brand",
+    "tableModel": "Model",
+    "tableType": "Type",
+    "tableSerialNumber": "Serial number",
+    "tableLocation": "Location",
+    "tableComment": "Comment",
+    "tableLastShowingDate": "Date of last show",
+    "tableRented": "Rented",
+    "tableWaste": "Waste",
+    "tableHighValue": "High value",
+    "tableActions": "Actions",
+    "rentTip": "Rent",
+    "backToStorageTip": "Back to storage",
+    "editTip": "Edit",
+    "showTip": "Showed",
+    "historyTip": "History",
+    "deleteTip": "Delete",
+    "deleteConfirm": "Are you sure?"
+  },
+  "instrument": {
+    "dataOfInstrument": "Instrument details",
+    "formErrorCatalogNumber": "Catalog number is required",
+    "formErrorBrand": "Brand is required",
+    "formErrorModel": "Model is required",
+    "formErrorType": "Type is required",
+    "formPlaceholderBrand": "e.g. Buffet",
+    "formPlaceholderModel": "e.g. E11",
+    "formPlaceholderType": "e.g. Clarinet"
+  },
+  "rent": {
+    "detailsOfRent": "Details of rental",
+    "instrument": "Instrument",
+    "startOfRental": "Start of rental",
+    "personOfRental": "Person of rental:",
+    "student": "Student",
+    "teacher": "Teacher",
+    "name": "Name: ",
+    "studentMothersName": ", mothers name: "
+  },
+  "students": {
+    "search": "Search",
+    "searchPlaceholder": "e.g. Camill",
+    "educationalID": "Eduactional ID",
+    "name": "Name",
+    "birthName": "Birth name",
+    "mothersName": "Mothers name",
+    "birthPlace": "Birth place",
+    "birthDate": "Birth date",
+    "gender": "Gender",
+    "actions": "Actions",
+    "quit": "Quit"
+  },
+  "teachers": {
+    "search": "Search",
+    "searchPlaceHolder": "e.g. Camill",
+    "educationalID": "Educational ID",
+    "name": "Name",
+    "actions": "Actions",
+    "quit": "Quit",
+    "quitConfirm": "Are yo sure?"
+  },
+  "menu": {
+    "home": "Catalog",
+    "instrumentsManagement": "Instruments management",
+    "administration": "Administration",
+    "studentManagement": "Students management",
+    "teachersManagement": "Teachers management",
+    "availableInstruments": "Available instruments",
+    "imports": "Data imports",
+    "languageSelect": "Language select",
+    "hun": "Hungarian",
+    "eng": "English",
+    "logout": "Logout",
+    "login": "Login"
+  }
+}

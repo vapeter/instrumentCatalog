@@ -1,0 +1,33 @@
+button {
+  outline: none;
+}
+
+.menu mat-icon {
+  margin-left: -5px;
+}
+
+mat-toolbar {
+  margin-bottom: 15px;
+}
+
+#logout {
+  text-align: right;
+  right: 40px;
+  position: fixed;
+}
+
+#language {
+  text-align: right;
+  right: 150px;
+  position: fixed;
+}
+
+#logo {
+  margin-top: -15px;
+  height: 70px ;
+  width: 70px;
+}
+
+.logo {
+  margin-right: 50px;
+}
