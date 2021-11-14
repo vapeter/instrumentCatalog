@@ -33,7 +33,7 @@ Navigate to the backend folder and:
 
 If you would like to run the application on a local machine:
 
-please set in the environment.prod.ts -> keycloakUrl variable at your server ip.
+please set in the environment.local.ts -> keycloakUrl variable at your server ip.
 
 Navigate to the frontend folder and:
 * From command line `ng build --configuration=local`
