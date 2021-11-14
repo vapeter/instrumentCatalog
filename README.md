@@ -1,6 +1,9 @@
 # Instrument catalog demo application
 
-This application was developed for registering instruments ofthe school. The main features of the application are adding andediting instruments, importing personal data, managing therentals of the musical instruments.
+This application was developed for registering instruments of
+the school. The main features of the application are adding and
+editing instruments, importing personal data, managing the
+rentals of the musical instruments.
 
 ## Prerequisites
 * Java 11
@@ -23,11 +26,14 @@ set the keycloak.auth-server-url variable to your ip address.
 If you would like to run the application on a server machine in production mode, please set in the application.properties -> spring.profiles.active to production, and don't forget to set the keycloak.auth-server-url variable at your server ip.
 
 Navigate to the backend folder and:
+* From command line `npm install`
 * From command line `mvn clean package`
 
 ## Building the frontend
 
 If you would like to run the application on a local machine:
+
+please set in the environment.prod.ts -> keycloakUrl variable at your server ip.
 
 Navigate to the frontend folder and:
 * From command line `ng build --configuration=local`
